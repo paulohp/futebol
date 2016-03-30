@@ -12,4 +12,11 @@ export default class Football {
         return competitions.json();
       });
   }
+  findCompetition (id) {
+    const COMPETITION_URL = `${BASE_URL}/competitions/${id}?Authorization=${this.apiKey}`;
+    return fetch(COMPETITION_URL)
+      .then(competition => {
+        return competition.json();
+      });
+  }
 }
